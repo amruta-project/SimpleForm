@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"> 
+<SelectDialog
+title="Supplier Name" items="{/}" 
+confirm="onConfirmSupplier" liveChange = ".onLiveChangeSupplier"
+change="onSelect" rememberSelections="true" 
+ search=".onSearchSuppiler" >
+ <StandardListItem title="{SupplierName}" press="onPressSupplier">
+</StandardListItem>
+</SelectDialog> 
+</core:FragmentDefinition> 

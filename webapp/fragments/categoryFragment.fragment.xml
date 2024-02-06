@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"> 
+<SelectDialog
+title="Select Product" items="{/}" confirm="onConfirmCategory" 
+liveChange="onLiveChangeCategory" search=".onSearchCategory"
+change="onSelect" rememberSelections="true" >
+ <StandardListItem title="{Category}" 
+ press="onPressCategory">
+</StandardListItem>
+</SelectDialog> 
+</core:FragmentDefinition> 
+

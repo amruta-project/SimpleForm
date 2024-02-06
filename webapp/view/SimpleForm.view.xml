@@ -1,0 +1,65 @@
+<mvc:View controllerName="simpleform.controller.SimpleForm"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page>
+    	<f:SimpleForm id="SimpleForm" editable="true"
+layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+labelSpanM="4" labelSpanS="4" adjustLabelSpan="true"
+emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0"
+columnsXL="2" columnsL="2" columnsM="2"
+singleContainerFullSize="false" backgroundDesign="Transparent" >
+          <f:content>
+				 <core:Title text="Product Details"/> 
+
+				<!-- <Label text="Product Id" textAlign="Left"/>
+                <Input value="{ProductModelData>ProductID}" id="product"/>
+			 -->
+			 <Label textAlign="Left" text="Product Id"/>
+				<ComboBox id="product" selectionChange="handleSelectionChange"
+				selectionFinish="handleSelectionFinish" selectedKey="{ProductModelData>ProductID}"
+				items="{path: 'ProductModelData>/',sorter:
+				 { path: 'ProductID'}}"
+				change="handleChange">
+					<core:Item key="{ProductModelData>ProductID}"  text="{ProductModelData>ProductID}"/>
+				</ComboBox>
+
+				<Label text="Category" textAlign="Left"/>
+            <Input value="{ProductModelData>Category}" id="category" showValueHelp="true"
+			 valueHelpRequest="onValueHelpCategory"></Input>
+	
+				<Label text="Name" textAlign="Left"/>
+				<Input value="{ProductModelData>Name}" id="name"/>
+                
+				<Label text="WeightUnit" textAlign="Left"/>
+				 <RadioButtonGroup id="radio" columns="2" selectedIndex="{
+					path:'ProductModelData>WeightUnit', formatter:'.WeightUnitFormatter'
+				 }" 
+				 > 
+					<RadioButton text="KG"  />
+					<RadioButton text="G" />
+				 </RadioButtonGroup>
+			
+                <Label text="Supplier Name" textAlign="Left"/>
+				<Input value="{ProductModelData>SupplierName}" id="supplierName" showValueHelp="true"  valueHelpRequest="onValueHelpSupplier"></Input>
+				
+				
+				<Label text="Description"/>
+		<TextArea id="dedescriptions"
+			value="{ProductModelData>Description}" cols="4" maxLength="60" width="100%" 
+		/>
+					
+				<!-- <Input value="{ProductModelData>Description}" id="description"/> -->
+
+        </f:content>
+        	</f:SimpleForm>
+			
+<footer>
+			 <OverflowToolbar id="otbFooter"> 
+				<!-- <ToolbarSpacer/> -->
+				<Button text="Save" type="Emphasized" press=".onSaveButton" />
+			 </OverflowToolbar> 
+		</footer>
+
+			
+    </Page>
+</mvc:View>
